@@ -8,7 +8,46 @@
 
 ##  3、目录结构优化
 
-拆分controller
+拆分controller，创建user.controller.js
+
+```js
+class UserController {
+    async register(ctx,next){
+        ctx.body = "注册成功"
+    }
+    async login(ctx,next){
+        ctx.body = "登陆成功"
+    }
+}
+module.exports = new UserController()
+```
+
+改写user.route.js
+
+```js
+const KoaRouter = require("koa-router")
+const { register, login } = require('../controller/user.controller')
+const router = new KoaRouter({ prefix: '/users' })
+
+// 注册接口
+router.post('/register', register)
+// 登陆接口
+router.post("/login", login)
+
+module.exports = router
+```
+
+创建`src/app/index.js`
+
+```js
+const Koa = require("koa")
+const UserRouter = require('../router/user.route')
+const app = new Koa()
+app.use(UserRouter.routes())
+module.exports = app
+```
+
+
 
 #  ---- 20230128 ---- 
 
