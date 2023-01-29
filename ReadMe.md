@@ -2,9 +2,7 @@
 
 ##  1、添加路由
 
-    ```js
-    npm i koa-router
-    ```
+`npm i koa-router`
 
 ##  2、拆分router
 
@@ -16,19 +14,13 @@
 
 ##  1、项目初始化
 
-    ```js
-    npm init -y
-    ```
+`npm init -y`
 
- ```js
- git init  
- ```
+`git init  `
 
 ##  2、项目搭建
 
-  ```js
-  npm i koa
-  ```
+`npm i koa`
 
 ##  3、基本优化
 
